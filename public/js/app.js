@@ -20,6 +20,9 @@ var dropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0__["default"]('#dropzone',
   maxFiles: 1,
   uploadMultiple: false
 });
+dropzone.on("sending", function (file, xhr, formData) {
+  console.log(file);
+});
 
 /***/ }),
 

@@ -9,5 +9,9 @@ const dropzone = new Dropzone('#dropzone',{
     dicrRemoveFile: 'Borrar Archivo',
     maxFiles: 1,
     uploadMultiple: false,
-})
+});
+
+dropzone.on("sending", function(file, xhr, formData){
+    console.log(file);
+});
 
