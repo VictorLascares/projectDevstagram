@@ -22,7 +22,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
             </svg>
           </a>
-          <a class="font-bold uppercase cursor-default text-gray-600 text-sm" href="#">{{ auth()->user()->username }}</a>
+          <a class="font-bold uppercase text-gray-600 hover:text-black text-sm" href="{{ route('posts.index', auth()->user()->username) }}">{{ auth()->user()->username }}</a>
           <form action="{{ route('logout') }}" method="POST" class="text-sm">
             @csrf
             <button type="submit" class="font-bold uppercase text-gray-600 hover:text-black">Cerrar Sesión</button>
