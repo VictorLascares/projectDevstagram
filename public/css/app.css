@@ -564,6 +564,9 @@ video {
 .gap-1 {
     gap: 0.25rem
 }
+.gap-3 {
+    gap: 0.75rem
+}
 .rounded-lg {
     border-radius: 0.5rem
 }
@@ -572,6 +575,9 @@ video {
 }
 .border {
     border-width: 1px
+}
+.border-2 {
+    border-width: 2px
 }
 .border-b {
     border-bottom-width: 1px
@@ -583,6 +589,10 @@ video {
 .border-sky-900 {
     --tw-border-opacity: 1;
     border-color: rgb(12 74 110 / var(--tw-border-opacity))
+}
+.border-black {
+    --tw-border-opacity: 1;
+    border-color: rgb(0 0 0 / var(--tw-border-opacity))
 }
 .bg-white {
     --tw-bg-opacity: 1;
@@ -612,9 +622,23 @@ video {
 .p-2 {
     padding: 0.5rem
 }
+.p-1 {
+    padding: 0.25rem
+}
+.p-10 {
+    padding: 2.5rem
+}
 .px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem
+}
+.px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem
+}
+.px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem
 }
 .text-center {
     text-align: center
@@ -699,9 +723,29 @@ video {
     --tw-bg-opacity: 1;
     background-color: rgb(7 89 133 / var(--tw-bg-opacity))
 }
+.hover\:bg-gray-800:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity))
+}
+.hover\:bg-gray-300:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity))
+}
+.hover\:bg-gray-100:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+}
+.hover\:bg-gray-50:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity))
+}
 .hover\:text-black:hover {
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity))
+}
+.hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 @media (min-width: 640px) {
     .sm\:flex {
@@ -721,6 +765,9 @@ video {
     .md\:mb-0 {
         margin-bottom: 0px
     }
+    .md\:mt-0 {
+        margin-top: 0px
+    }
     .md\:block {
         display: block
     }
@@ -738,6 +785,12 @@ video {
     }
     .md\:w-8\/12 {
         width: 66.666667%
+    }
+    .md\:w-1 {
+        width: 0.25rem
+    }
+    .md\:w-1\/2 {
+        width: 50%
     }
     .md\:flex-row {
         flex-direction: row
