@@ -100,7 +100,12 @@ return [
     'not_in' => 'El campo :attribute seleccionado es invalido.',
     'not_regex' => 'El formato del campo :attribute no es válido.',
     'numeric' => 'El campo :attribute debe ser un número.',
-    'password' => 'La contraseña es incorrecta.',
+    'password' => [
+      'letters' => 'El campo :attribute debe contener al menos una letra.',
+      'mixed' => 'El campo :attribute debe contener al menos una letra mayuscula y una minuscula',
+      'numbers' => 'El campo :attribute debe contener al menos un numero.',
+      'symbols' => 'El campo :attribute debe contener al menos un simbolo'
+    ],
     'present' => 'El campo :attribute debe estar presente.',
     'prohibited' => 'El campo :attribute no está permitido.',
     'prohibited_if' => 'El campo :attribute no está permitido cuando :other es :value.',

@@ -36,6 +36,7 @@
             id="username"
             placeholder="Nombre de Usuario"
             class="border p-3 w-full rounded-lg @error('username') border-red-600 @enderror"
+            value="{{ old('username') }}"
           >
           @error('username')
             <p class="text-red-600">{{ $message }}</p>
@@ -51,6 +52,7 @@
             id="email"
             placeholder="correo@example.com"
             class="border p-3 w-full rounded-lg @error('email') border-red-600 @enderror"
+            value="{{ old('email') }}"
           >
           @error('email')
             <p class="text-red-600">{{ $message }}</p>
@@ -72,13 +74,13 @@
           @enderror
         </div>
         <div class="mb-5">
-          <label for="confirmedPassword" class="mb-2 block uppercase text-gray-500 font-bold">
+          <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">
             Confirmar Contraseña
           </label>
           <input 
             type="password"
-            name="confirmedPassword"
-            id="confirmedPassword"
+            name="password_confirmation"
+            id="password_confirmation"
             placeholder="Confirmar contraseña"
             class="border p-3 w-full rounded-lg"
           >
