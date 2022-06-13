@@ -39,5 +39,6 @@ class RegisterController extends Controller
     ]);
 
     // Redireccionar
+    return redirect()->route('muro');
   }
 }
