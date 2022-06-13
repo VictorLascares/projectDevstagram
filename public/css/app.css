@@ -516,6 +516,9 @@ video {
 .h-6 {
     height: 1.5rem
 }
+.h-96 {
+    height: 24rem
+}
 .w-full {
     width: 100%
 }
@@ -581,6 +584,9 @@ video {
 }
 .border-b {
     border-bottom-width: 1px
+}
+.border-dashed {
+    border-style: dashed
 }
 .border-red-600 {
     --tw-border-opacity: 1;
