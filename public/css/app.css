@@ -516,6 +516,12 @@ video {
 .cursor-pointer {
     cursor: pointer
 }
+.cursor-none {
+    cursor: none
+}
+.cursor-default {
+    cursor: default
+}
 .items-center {
     align-items: center
 }
@@ -637,6 +643,10 @@ video {
 .hover\:bg-sky-700:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(3 105 161 / var(--tw-bg-opacity))
+}
+.hover\:text-black:hover {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity))
 }
 @media (min-width: 768px) {
     .md\:flex {

@@ -13,14 +13,22 @@
   <header class="p-5 border-b bg-white shadow">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-3xl font-black">DevStagram</h1>
-      <nav class="flex gap-2 items-center">
-        <a class="font-bold uppercase text-gray-600 text-sm" href="/login">Login</a>
-        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear Cuenta</a>
-      </nav>
+      @auth
+        <nav class="flex gap-2 items-center">
+          <a class="font-bold uppercase cursor-default text-gray-600 text-sm" href="#">{{ auth()->user()->username }}</a>
+          <a class="font-bold uppercase text-gray-600 hover:text-black text-sm" href="{{ route('register') }}">Cerrar Sesión</a>
+        </nav>
+      @endauth
+      @guest
+        <nav class="flex gap-2 items-center">
+          <a class="font-bold uppercase text-gray-600 hover:text-black text-sm" href="/login">Login</a>
+          <a class="font-bold uppercase text-gray-600 hover:text-black text-sm" href="{{ route('register') }}">Crear Cuenta</a>
+        </nav>
+      @endguest
     </div>
   </header>
   <main class="container mx-auto mt-10">
-    <h2 class="font-black text-center text-3xl mb-10"23222>
+    <h2 class="font-black text-center text-3xl mb-10" 23222>
       @yield('titulo')
     </h2>
     @yield('contenido')
