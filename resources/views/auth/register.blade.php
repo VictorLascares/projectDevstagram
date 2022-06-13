@@ -8,7 +8,7 @@
       <img src="{{ asset('img/registrar.jpg') }}" alt="Imagen resitro de usuarios">
     </div>
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-      <form action="{{ route('register') }}" method="POST">
+      <form action="{{ route('register') }}" method="POST" novalidate>
         @csrf
         <div class="mb-5">
           <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">
@@ -19,8 +19,12 @@
             name="name"
             id="name"
             placeholder="Nombre"
-            class="border p-3 w-full rounded-lg"
+            class="border p-3 w-full rounded-lg @error('name') border-red-600 @enderror"
+            value="{{ old('name') }}"
           >
+          @error('name')
+            <p class="text-red-600">{{ $message }}</p>
+          @enderror
         </div>
         <div class="mb-5">
           <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">
@@ -28,11 +32,14 @@
           </label>
           <input 
             type="text"
-            name="name"
+            name="username"
             id="username"
             placeholder="Nombre de Usuario"
-            class="border p-3 w-full rounded-lg"
+            class="border p-3 w-full rounded-lg @error('username') border-red-600 @enderror"
           >
+          @error('username')
+            <p class="text-red-600">{{ $message }}</p>
+          @enderror
         </div>
         <div class="mb-5">
           <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">
@@ -43,8 +50,11 @@
             name="email"
             id="email"
             placeholder="correo@example.com"
-            class="border p-3 w-full rounded-lg"
+            class="border p-3 w-full rounded-lg @error('email') border-red-600 @enderror"
           >
+          @error('email')
+            <p class="text-red-600">{{ $message }}</p>
+          @enderror
         </div>
         <div class="mb-5">
           <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">
@@ -55,8 +65,11 @@
             name="password"
             id="password"
             placeholder="Contraseña"
-            class="border p-3 w-full rounded-lg"
+            class="border p-3 w-full rounded-lg @error('password') border-red-600 @enderror"
           >
+          @error('password')
+            <p class="text-red-600">{{ $message }}</p>
+          @enderror
         </div>
         <div class="mb-5">
           <label for="confirmedPassword" class="mb-2 block uppercase text-gray-500 font-bold">
