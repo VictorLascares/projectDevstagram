@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
@@ -21,6 +23,13 @@ class RegisterController extends Controller
       'email' => ['required', 'unique:users', 'email', 'max:60'],
       'password' => ['required','confirmed',Password::min(8)->letters()
       ->mixedCase()->numbers()->symbols()->uncompromised()]
+    ]);
+
+    User::create([
+        'name' => $request->name,
+        'username' => $request->username,
+        'email' => $request->email,
+        'password' => Hash::make($request->password)
     ]);
   }
 }
