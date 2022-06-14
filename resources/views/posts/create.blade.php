@@ -47,7 +47,7 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <input type="hidden" name="imagen">
+                    <input type="hidden" name="imagen" value="{{ old('imagen') }}">
                     @error('imagen')
                         <p class="text-red-600">{{ $message }}</p>
                     @enderror
