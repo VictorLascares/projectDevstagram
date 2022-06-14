@@ -14,7 +14,7 @@
         </div>
 
         <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
-            <form action="{{ route('register') }}" method="POST" novalidate>
+            <form action="{{ route('posts.store') }}" method="POST" novalidate>
                 @csrf
                 <div class="mb-5">
                   <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">
@@ -40,7 +40,7 @@
                       name="descripcion"
                       id="descripcion"
                       placeholder="Descripción de la Publicación"
-                      class="border p-3 w-full rounded-lg @error('descripcion') border-red-600 @enderror"
+                      class="border p-3 w-full rounded-lg resize-none @error('descripcion') border-red-600 @enderror"
                     >{{ old('descripcion') }}</textarea>
                     @error('descripcion')
                       <p class="text-red-600">{{ $message }}</p>
