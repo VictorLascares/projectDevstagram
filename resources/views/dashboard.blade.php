@@ -3,7 +3,7 @@
     Perfil: {{ $user->username }}
 @endsection
 @section('contenido')
-    <div class="flex justify-center">
+    <div class="flex justify-center border-b-2 border-b-gray-200 pb-4">
         <div class="w-full md:w-8/12 lg:w-6/12 flex flex-col md:flex-row items-center">
             <div class="w-8/12 px-5">
                 <img src="{{ asset('img/usuario.svg') }}" alt="Imagen de Usuario">
@@ -27,14 +27,19 @@
 
     <section class="container mx-auto mt-10">
         <h2 class="text-4xl text-center font-black my-10">Publicaciones</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            @foreach ($posts as $post)
-                <div>
-                    <a href="">
-                        <img src="{{ asset('img/uploads/' . $post->imagen) }}" alt="Imagen del Post {{ $post->titulo }}">
-                    </a>
-                </div>
-            @endforeach
-        </div>
+        @if ($posts->count())
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                @foreach ($posts as $post)
+                    <div class="relative cursor-pointer">
+                        <a href="">
+                            <img src="{{ asset('img/uploads/' . $post->imagen) }}" alt="Imagen del Post {{ $post->titulo }}">
+                        </a>
+                        <div class=" hover:visible absolute top-0 bottom-0 left-0 right-0 hover:bg-[rgba(0,0,0,.3)]"></div>
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <p class="text-gray-600 text-xl text-center font-bold">Todavia no hay publicaciones</p>
+        @endif
     </section>
 @endsection
