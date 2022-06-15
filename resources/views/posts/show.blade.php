@@ -12,16 +12,16 @@
             </div>
 
             <div>
-                <div class="flex flex-wrap justify-start gap-1">
-                    <p class="font-bold">{{ $post->user->username }}</p>
+                <div class="flex flex-wrap gap-1">
+                    <a href="{{ route('posts.index', $post->user) }}" class="font-bold hover:drop-shadow-md">{{ $post->user->username }}</a>
                     <p>{{ $post->descripcion }}</p>
                 </div>
                 <p class="text-sm text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
             </div>
         </div>
-        @auth
-            <div class="md:w-1/2 md:pb-5 md:pr-5 md:pl-5 border-t md:border-0 mt-3 md:mt-0">
-                <div class="md:shadow mb-5">
+        <div class="md:w-1/2 md:pb-5 md:pr-5 md:pl-5 md:mt-0 flex flex-col-reverse md:flex-col">
+            @auth
+                <div class="my-5 border">
                     <form method="POST" action="{{ route('comentarios.store', ['post' => $post, 'user' => $user]) }}" class="flex items-center">
                         @csrf
                         <div class="grow">
@@ -36,12 +36,25 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class=" hover:drop-shadow-md flex-none my-auto cursor-pointer font-bold text-gray-500 p-3">
+                        <button type="submit" class="hover:drop-shadow-md flex-none my-auto cursor-pointer font-bold text-gray-500 p-3">
                             Publicar
                         </button>
                     </form>
                 </div>
+            @endauth
+            <div class="max-h-96 overflow-y-scroll">
+                @if ($post->comentarios->count())
+                    @foreach ($post->comentarios as $comentario)
+                        <div class="flex gap-1 flex-wrap">
+                            <a href="{{ route('posts.index', $comentario->user) }}" class="font-bold hover:drop-shadow-md">{{$comentario->user->username}}</a>
+                            <p>{{$comentario->comentario}}</p>
+                        </div>
+                        <p class="text-sm text-gray-500">{{ $comentario->created_at->diffForHumans() }}</p>
+                    @endforeach
+                @else
+                    <p class="p-10 text-center">No hay comentarios todavia</p>
+                @endif
             </div>
-        @endauth
+        </div>
     </div>
 @endsection
