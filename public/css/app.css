@@ -550,6 +550,9 @@ video {
 .mb-10 {
     margin-bottom: 2.5rem
 }
+.mt-4 {
+    margin-top: 1rem
+}
 .block {
     display: block
 }
@@ -735,6 +738,12 @@ video {
 .bg-gray-300 {
     --tw-bg-opacity: 1;
     background-color: rgb(209 213 219 / var(--tw-bg-opacity))
+}
+.fill-red-600 {
+    fill: #dc2626
+}
+.stroke-red-600 {
+    stroke: #dc2626
 }
 .p-5 {
     padding: 1.25rem
