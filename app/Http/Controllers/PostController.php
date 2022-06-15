@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
@@ -62,6 +63,13 @@ class PostController extends Controller
     {
         $this->authorize('delete', $post);
         $post->delete();
+
+        // Eliminar Imagen
+        $imagen_path = public_path('img/uploads/' . $post->imagen);
+        if(File::exists($imagen_path)) {
+            unlink($imagen_path);
+        }
+
         return redirect()->route('posts.index', auth()->user()->username);
     }
 }
