@@ -9,8 +9,15 @@
                 <img src="{{ asset('img/usuario.svg') }}" alt="Imagen de Usuario">
             </div>
             <div class="flex flex-col items-center md:block md:w-8/12 lg:w-6/12 px-5">
-                <p class="text-gray-700 text-2xl mb-3">{{ $user->username }}</p>
-                <div class="md:flex md:justify-between md:items-center gap-2">
+                <div class="flex gap-2 items-center mb-2">
+                    <p class="text-gray-700 text-2xl">{{ $user->username }}</p>
+                    @auth
+                        @if ($user->id === auth()->user()->id)
+                            <a class="hover:bg-gray-200 font-bold text-sm bg-gray-100 py-1 px-2 border-gray-200 border-2 rounded-lg" href="">Editar perfil</a>
+                        @endif
+                    @endauth
+                </div>
+                <div class="md:flex md:justify-between md:items-center gap-5">
                     <p class="flex justify-start gap-1 text-gray-800 text-sm mb-3 md:mb-0 font-bold">
                         0<span class="font-normal">Publicaciones</span>
                     </p>
