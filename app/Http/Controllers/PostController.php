@@ -60,6 +60,8 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
-        dd($post->titulo);
+        $this->authorize('delete', $post);
+        $post->delete();
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }
