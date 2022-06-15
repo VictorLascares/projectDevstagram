@@ -5,7 +5,24 @@
 @section('contenido')
     <div class="container mx-auto md:flex gap-4 px-2">
         <div class="md:w-1/2">
-            <img src="{{ asset('img/uploads/' . $post->imagen) }}" alt="Imagen de la publicacion con el titulo {{$post->titulo}}">
+            <div class="relative">
+                <img src="{{ asset('img/uploads/' . $post->imagen) }}" alt="Imagen de la publicacion con el titulo {{$post->titulo}}">
+                
+                @auth
+                    @if ( $post->user_id === auth()->user()->id )
+                        <form class="absolute top-0 right-0" action="">
+                            <button 
+                                type="submit" 
+                                class="bg-gray-300 opacity-30 hover:opacity-50"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="rgb(128,128,128)" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </form>
+                    @endif
+                @endauth
+            </div>
 
             <div class="p-3">
                 <p>0 Likes</p>
@@ -18,6 +35,7 @@
                 </div>
                 <p class="text-sm text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
             </div>
+
         </div>
         <div class="md:w-1/2 md:pb-5 md:pr-5 md:pl-5 md:mt-0 flex flex-col-reverse md:flex-col">
             @auth
