@@ -30,11 +30,11 @@
         @if ($posts->count())
             <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 @foreach ($posts as $post)
-                    <div class="relative cursor-pointer">
-                        <a href="">
+                    <div class="cursor-pointer">
+                        <a class="relative" href="{{ route('posts.show', ['post' => $post, 'user' => $user]) }}">
                             <img src="{{ asset('img/uploads/' . $post->imagen) }}" alt="Imagen del Post {{ $post->titulo }}">
+                            <div class="absolute top-0 bottom-0 left-0 right-0 hover:bg-[rgba(0,0,0,.3)]"></div>
                         </a>
-                        <div class=" hover:visible absolute top-0 bottom-0 left-0 right-0 hover:bg-[rgba(0,0,0,.3)]"></div>
                     </div>
                 @endforeach
             </div>
