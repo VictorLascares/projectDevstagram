@@ -10,7 +10,9 @@
                 
                 @auth
                     @if ( $post->user_id === auth()->user()->id )
-                        <form class="absolute top-0 right-0" action="">
+                        <form class="absolute top-0 right-0" action="{{ route('posts.destroy', $post) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
                             <button 
                                 type="submit" 
                                 class="bg-gray-300 opacity-30 hover:opacity-50"
