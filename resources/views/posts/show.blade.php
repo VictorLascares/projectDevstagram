@@ -22,7 +22,8 @@
         @auth
             <div class="md:w-1/2 md:pb-5 md:pr-5 md:pl-5 border-t md:border-0 mt-3 md:mt-0">
                 <div class="md:shadow mb-5">
-                    <form action="" class="flex items-center">
+                    <form method="POST" action="{{ route('comentarios.store', ['post' => $post, 'user' => $user]) }}" class="flex items-center">
+                        @csrf
                         <div class="grow">
                             <textarea 
                             name="comentario"
