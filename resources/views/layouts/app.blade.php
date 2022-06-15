@@ -17,7 +17,7 @@
       @auth
         <nav class="flex gap-3 justify-end items-center">
           <a href="{{ route('posts.create') }}"
-            class="flex items-center gap-2 bg-white border-2 border-black p-1 hover:bg-gray-50 rounded-lg cursor-pointer">
+            class="flex items-center gap-2 bg-white border-2 border-black p-1 hover:bg-gray-50 rounded-lg cursor-pointer" title="Agregar Publicación">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
               stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
