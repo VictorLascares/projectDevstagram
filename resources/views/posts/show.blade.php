@@ -32,7 +32,7 @@
                             class="focus:outline-none w-full focus:border-none bg-transparent p-3 resize-none @error('descripcion') border-red-600 @enderror"
                             ></textarea>
                             @error('comentario')
-                            <p class="text-red-600">{{ $message }}</p>
+                            <p class="text-red-600 p-4">{{ $message }}</p>
                             @enderror
                         </div>
 
