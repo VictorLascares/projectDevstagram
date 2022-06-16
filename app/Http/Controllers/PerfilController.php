@@ -13,6 +13,6 @@ class PerfilController extends Controller
 
     public function index()
     {
-        return view();
+        return view('perfil.index');
     }
 }
