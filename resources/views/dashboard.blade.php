@@ -19,7 +19,7 @@
                 </div>
                 <div class="md:flex md:justify-between md:items-center gap-5">
                     <p class="flex justify-start gap-1 text-gray-800 text-sm mb-3 md:mb-0 font-bold">
-                        0<span class="font-normal">Publicaciones</span>
+                        {{$user->posts->count()}}<span class="font-normal">Publicaciones</span>
                     </p>
                     <p class="flex justify-start gap-1 text-gray-800 text-sm mb-3 md:mb-0 font-bold">
                         0<span class="font-normal">Seguidores</span>
