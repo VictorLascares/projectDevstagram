@@ -757,6 +757,14 @@ video {
 .bg-transparent {
     background-color: transparent
 }
+.bg-blue-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(37 99 235 / var(--tw-bg-opacity))
+}
+.bg-sky-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(14 165 233 / var(--tw-bg-opacity))
+}
 .fill-red-600 {
     fill: #dc2626
 }
@@ -935,6 +943,10 @@ video {
 .hover\:bg-gray-50:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(249 250 251 / var(--tw-bg-opacity))
+}
+.hover\:bg-sky-600:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(2 132 199 / var(--tw-bg-opacity))
 }
 .hover\:text-gray-500:hover {
     --tw-text-opacity: 1;

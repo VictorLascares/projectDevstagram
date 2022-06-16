@@ -14,6 +14,23 @@
                     @auth
                         @if ($user->id === auth()->user()->id)
                             <a class="hover:bg-gray-200 font-bold text-sm bg-gray-100 py-1 px-2 border-gray-200 border-2 rounded-lg" href="{{ route('perfil.index') }}">Editar perfil</a>
+                        @else
+                            <form action="" method="POST">
+                                @csrf
+                                <input 
+                                    type="submit" 
+                                    value="Seguir"
+                                    class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-1 px-5 rounded-md cursor-pointer"
+                                >
+                            </form>
+                            <form action="" method="POST">
+                                @csrf
+                                <input 
+                                    type="submit" 
+                                    value="Dejar de seguir"
+                                    class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-1 px-5 rounded-md cursor-pointer"
+                                >
+                            </form>
                         @endif
                     @endauth
                 </div>
