@@ -23,8 +23,9 @@
                                     class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-1 px-5 rounded-md cursor-pointer"
                                 >
                             </form>
-                            <form action="" method="POST">
+                            <form action="{{ route('users.unfollow', $user) }}" method="POST">
                                 @csrf
+                                @method('DELETE')
                                 <input 
                                     type="submit" 
                                     value="Dejar de seguir"
