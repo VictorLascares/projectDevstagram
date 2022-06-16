@@ -5,8 +5,8 @@
 @section('contenido')
     <div class="flex justify-center border-b-2 border-b-gray-200 pb-4">
         <div class="w-full md:w-8/12 lg:w-6/12 flex flex-col md:flex-row items-center">
-            <div class="w-8/12 px-5">
-                <img src="{{ asset('img/usuario.svg') }}" alt="Imagen de Usuario">
+            <div class="w-8/12 px-5 pb-5">
+                <img class="rounded-full" src="{{ $user->imagen ? asset('img/perfiles/'.$user->imagen) : asset('img/usuario.svg') }}" alt="Imagen de Usuario">
             </div>
             <div class="flex flex-col items-center md:block md:w-8/12 lg:w-6/12 px-5">
                 <div class="flex gap-2 items-center mb-2">
