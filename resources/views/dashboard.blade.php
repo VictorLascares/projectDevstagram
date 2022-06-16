@@ -40,13 +40,13 @@
                 </div>
                 <div class="md:flex md:justify-between md:items-center gap-5">
                     <p class="flex justify-start gap-1 text-gray-800 text-sm mb-3 md:mb-0 font-bold">
-                        {{$user->posts->count()}}<span class="font-normal">Publicaciones</span>
+                        {{$user->posts->count()}}<span class="font-normal">publicaciones</span>
                     </p>
                     <p class="flex justify-start gap-1 text-gray-800 text-sm mb-3 md:mb-0 font-bold">
-                        0<span class="font-normal">Seguidores</span>
+                        {{$user->followers->count()}}<span class="font-normal">@choice('seguidor|seguidores', $user->followers->count())</span>
                     </p>
                     <p class="flex justify-start gap-1 text-gray-800 text-sm mb-3 md:mb-0 font-bold">
-                        0<span class="font-normal">Seguidos</span>
+                        {{$user->followings->count()}}<span class="font-normal">@choice('seguido|seguidos', $user->followings->count())</span>
                     </p>
                 </div>
             </div>
