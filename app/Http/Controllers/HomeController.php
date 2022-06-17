@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function __invoke()
     {
         $seguidos = auth()->user()->followings->pluck('id')->toArray();
-        $posts = Post::whereIn('user_id', $seguidos)->orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::whereIn('user_id', $seguidos)->latest()->paginate(5);
         return view('home', [
             'posts' => $posts
         ]);
