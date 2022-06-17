@@ -28,7 +28,11 @@
             </div>
 
             @auth
-                <livewire:like-post />
+                @php
+                    $mensaje =  "Hola mundo desde una variable"
+                @endphp
+
+                <livewire:like-post :mensaje="$mensaje" />
                 @if ( $post->checkLike(auth()->user()) )
                     <form action="{{ route('posts.likes.destroy', $post) }}" method="POST">
                         @csrf
