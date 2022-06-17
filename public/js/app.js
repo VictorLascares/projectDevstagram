@@ -11,31 +11,34 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.mjs");
 
-dropzone__WEBPACK_IMPORTED_MODULE_0__["default"].autoDiscover = false;
-var dropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0__["default"]('#dropzone', {
-  dicDefaultMessage: 'Sube aqui tu Imagen',
-  acceptedFiles: '.png, .jpg, .jpeg, .gif',
-  addRemoveLinks: true,
-  dicrRemoveFile: 'Borrar Archivo',
-  maxFiles: 1,
-  uploadMultiple: false,
-  init: function init() {
-    if (document.querySelector('[name="imagen"]').value.trim()) {
-      var imagenPublicada = {};
-      imagenPublicada.size = 1234;
-      imagenPublicada.name = document.querySelector('[name="imagen"]').value;
-      this.options.addedfile.call(this, imagenPublicada);
-      this.options.thumbnail.call(this, imagenPublicada, "/img/uploads/".concat(imagenPublicada.name));
-      imagenPublicada.previewElement.classList.add('dz-success', 'dz-complete');
+
+if (document.querySelector('#dropzone')) {
+  dropzone__WEBPACK_IMPORTED_MODULE_0__["default"].autoDiscover = false;
+  var dropzone = new dropzone__WEBPACK_IMPORTED_MODULE_0__["default"]('#dropzone', {
+    dicDefaultMessage: 'Sube aqui tu Imagen',
+    acceptedFiles: '.png, .jpg, .jpeg, .gif',
+    addRemoveLinks: true,
+    dicrRemoveFile: 'Borrar Archivo',
+    maxFiles: 1,
+    uploadMultiple: false,
+    init: function init() {
+      if (document.querySelector('[name="imagen"]').value.trim()) {
+        var imagenPublicada = {};
+        imagenPublicada.size = 1234;
+        imagenPublicada.name = document.querySelector('[name="imagen"]').value;
+        this.options.addedfile.call(this, imagenPublicada);
+        this.options.thumbnail.call(this, imagenPublicada, "/img/uploads/".concat(imagenPublicada.name));
+        imagenPublicada.previewElement.classList.add('dz-success', 'dz-complete');
+      }
     }
-  }
-});
-dropzone.on("success", function (file, response) {
-  document.querySelector('[name="imagen"]').value = response.imagen;
-});
-dropzone.on("removedfile", function () {
-  document.querySelector('[name="imagen"]').value = '';
-});
+  });
+  dropzone.on("success", function (file, response) {
+    document.querySelector('[name="imagen"]').value = response.imagen;
+  });
+  dropzone.on("removedfile", function () {
+    document.querySelector('[name="imagen"]').value = '';
+  });
+}
 
 /***/ }),
 
