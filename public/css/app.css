@@ -553,6 +553,9 @@ video {
 .mt-4 {
     margin-top: 1rem
 }
+.mb-4 {
+    margin-bottom: 1rem
+}
 .block {
     display: block
 }
@@ -983,6 +986,12 @@ video {
     .sm\:hidden {
         display: none
     }
+    .sm\:w-1\/4 {
+        width: 25%
+    }
+    .sm\:w-1\/2 {
+        width: 50%
+    }
     .sm\:flex-1 {
         flex: 1 1 0%
     }
@@ -1051,6 +1060,9 @@ video {
 }
 @media (min-width: 1024px) {
     .lg\:w-6\/12 {
+        width: 50%
+    }
+    .lg\:w-1\/2 {
         width: 50%
     }
     .lg\:grid-cols-3 {
